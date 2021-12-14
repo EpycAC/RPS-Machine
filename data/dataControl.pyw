@@ -6,7 +6,7 @@ class Controller():
         #storage.setUp()
         proportion = np.array([1, 1, 1])
     def appendProbabilities():
-        storage.getProbabilities()
+        #storage.getProbabilities()
         sampleSize = proportion[0] + proportion[1] + proportion[2]
         probability = proportion / sampleSize
         return probability

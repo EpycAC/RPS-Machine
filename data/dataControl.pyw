@@ -3,7 +3,7 @@ class Controller():
         import numpy as np
         #from appendData import storage
         global proportion
-        storage.setUp()
+        #storage.setUp()
         proportion = np.array([1, 1, 1])
     def appendProbabilities():
         storage.getProbabilities()

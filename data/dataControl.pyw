@@ -1,7 +1,7 @@
 class Controller():
     def setUp():
         import numpy as np
-        from appendData import storage
+        #from appendData import storage
         global proportion
         storage.setUp()
         proportion = np.array([1, 1, 1])

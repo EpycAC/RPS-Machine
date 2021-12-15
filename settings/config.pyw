@@ -1,5 +1,6 @@
 import toml
 
 class settings():
-    config = toml.load("config.toml")
+    path = __file__.replace("config.pyw", "")
+    config = toml.load(path + "config.toml")
     rounds = config["Game"]["rounds"]

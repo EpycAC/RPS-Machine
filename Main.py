@@ -5,7 +5,6 @@ from numpy import random as npr
 import numpy as np
 #from data.appendData import storage
 #Imports Classes
-#Test
 from settings.config import settings
 from data.dataControl import Controller
 Controller.setUp()

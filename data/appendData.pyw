@@ -3,9 +3,8 @@ class storage():
         self.path = path
         print(self.path)
     def readFile(self, inp):
-        pathRead = self.path
-        global tempPathRead
-        tempPathRead = pathRead
+        import os
+        pathRead = self.path + "probability\ ".replace(" ", "")
         for index in range(len(inp)):
             pathRead = pathRead + inp[index]
             pathRead = list(pathRead)
@@ -14,4 +13,7 @@ class storage():
                 pathRead = "".join(pathRead)
             else:
                 pathRead = "".join(pathRead)
-        print(pathRead)
+            if not(os.path.exists(pathRead)):
+                os.makedirs(pathRead)
+        try:
+            open(pathRead + "probability.json")

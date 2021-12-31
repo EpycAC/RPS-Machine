@@ -27,8 +27,33 @@ def check():
         return oMove
 
 #Loop in which the game is played in
+pWins = 0
+cWins = 0
 for i in range(rounds):
-    move = check()
     output = npr.choice(options, p = Controller.appendProbabilities())
+    move = check()
+    if move == "p" and output == "r":
+        pWins += 1
+        print("You Won!")
+    elif move == "s" and output == "p":
+        pWins += 1
+        print("You Won!")
+    elif move == "r" and output == "s":
+        pWins += 1
+        print("You Won!")
+    elif  move == output:
+        print("tie")
+    else:
+        cWins += 1
+        print("You Lost")
     print(output)
-    print(Controller.adjustProbabilities(move))
+    Controller.adjustProbabilities(move)
+
+print('''OVERALL RESULTS:
+---''')
+if cWins > pWins:
+    print("You Lost " + str(pWins) + " to " + str(cWins))
+elif pWins > cWins:
+    print("You Won! " + str(pWins) + " to " + str(cWins))
+else:
+    print("Draw")

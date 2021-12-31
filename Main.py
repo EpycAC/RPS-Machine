@@ -1,4 +1,6 @@
 #File: Main.py
+#python RPSMachine.py
+
 #Imports Modules
 import random
 from numpy import random as npr
@@ -18,19 +20,15 @@ options = ["Rock", "Paper", "Sizzors"]
 def check():
     move = input("Opponents move: ")
     oMove = move.lower()
-    if oMove == "r":
-        Controller.adjustProbabilities("r")
-    elif oMove == "p":
-        Controller.adjustProbabilities("p")
-    elif oMove == "s":
-        Controller.adjustProbabilities("s")
-    else:
+    if not(oMove == "r" or "p" or "s"):
         print("Invalid input")
         check()
+    else:
+        return oMove
 
 #Loop in which the game is played in
 for i in range(rounds):
-    check()
+    move = check()
     output = npr.choice(options, p = Controller.appendProbabilities())
     print(output)
-    print(Controller.appendProbabilities())
+    print(Controller.adjustProbabilities(move))

@@ -1,10 +1,10 @@
 class Controller():
-    def setUp():
+    def setUp(profile):
         import sys
         sys.path.append(__file__.replace("dataControl.pyw", ""))
         from appendData import storage
         global s
-        s = storage(__file__.replace("dataControl.pyw", ""))
+        s = storage(__file__.replace("dataControl.pyw", ""), profile)
         global tab
         tab = []
 

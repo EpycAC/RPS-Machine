@@ -8,13 +8,13 @@ import numpy as np
 #Imports Classes
 from settings.config import settings
 from data.dataControl import Controller
-Controller.setUp()
+Controller.setUp(settings.profile)
 
 #Sets the number of rounds
 rounds = settings.rounds
 
 #Sets the 3 values
-options = ["Rock", "Paper", "Sizzors"]
+options = ["Rock", "Paper", "Scizzors"]
 
 #Defines the input function
 def check():
@@ -42,7 +42,7 @@ for i in range(rounds):
     elif (move == "s") and (output == "Paper"):
         pWins += 1
         print("You Won!")
-    elif (move == "r") and (output == "Sizzors"):
+    elif (move == "r") and (output == "Scizzors"):
         pWins += 1
         print("You Won!")
     elif  move == osimplified:

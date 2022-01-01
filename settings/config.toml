@@ -1,2 +1,3 @@
 [Game]
-rounds = 10
+rounds = 5
+profile = "Universal"

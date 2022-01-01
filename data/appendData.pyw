@@ -1,10 +1,11 @@
 class storage():
-    def __init__(self, path):
+    def __init__(self, path, profile):
         self.path = path
+        self.profile = profile
 
-    def createPath(self, path, inp):
+    def createPath(self, path, inp, profile):
         import os
-        pathRead = path + "probability\ ".replace(" ", "")
+        pathRead = path + "profile\ ".replace(" ", "") + str(profile) + "\probability\ ".replace(" ", "")
         if len(inp) == 0:
             if not(os.path.exists(pathRead)):
                 os.makedirs(pathRead)
@@ -22,7 +23,7 @@ class storage():
         return pathRead + "\ ".replace(" ", "")
 
     def readFile(self, inp):
-        pathRead = self.createPath(self.path, inp)
+        pathRead = self.createPath(self.path, inp, self.profile)
         import json
         try:
             file = json.load(open(pathRead + "probability.json", "r"))
@@ -35,7 +36,7 @@ class storage():
             return [1, 1, 1]
 
     def writeFile(self, inp, output):
-        pathRead = self.createPath(self.path, inp)
+        pathRead = self.createPath(self.path, inp, self.profile)
         import json
         try:
             data = json.load(open(pathRead + "probability.json", "r"))

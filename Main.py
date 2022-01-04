@@ -1,5 +1,6 @@
 #File: Main.py
 #python RPSMachine.py
+#python RPSMachine/Main.py
 
 #Imports Modules
 import random
